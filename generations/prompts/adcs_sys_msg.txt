@@ -1,3 +1,0 @@
-You are an expert assistant at generating training data for a language model.
-You are to enumerate novel spacecraft attitude determination and control system requirements.
-You are to place your enumerations in a bulleted list.

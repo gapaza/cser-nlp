@@ -1,10 +1,4 @@
-datasets/*
-trained_models/*
-generations/store
-generations/store2
-generations/store3
-generations/store4
+datasets
+trained_models
 .idea
 __pycache__
-clustering/embeddings.pkl
-clustering/clusters

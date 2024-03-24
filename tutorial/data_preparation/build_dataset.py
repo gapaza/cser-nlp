@@ -106,7 +106,7 @@ val_dataset = val_dataset_text.map(encode_batch, num_parallel_calls=tf.data.AUTO
 import os
 
 # 5.1 Define the dataset name and paths
-dataset_name = 'tutorial_dataset_2'
+dataset_name = 'tutorial_dataset'
 dataset_path = os.path.join(config.datasets_dir, dataset_name)
 train_dataset_path = os.path.join(dataset_path, 'train_dataset')
 val_dataset_path = os.path.join(dataset_path, 'val_dataset')

@@ -11,7 +11,6 @@ import os
 
 
 
-
 # ------------------------------------------------------------
 # 1. Get the previously built items for training
 # ------------------------------------------------------------
@@ -43,7 +42,7 @@ val_dataset = val_dataset
 import tensorflow as tf
 
 # 2.1 Define model save path
-model_save_name = 'tutorial_model_1'
+model_save_name = 'tutorial_model'
 save_path = os.path.join(config.trained_models_dir, model_save_name)
 
 # 2.2 Create the checkpoint object
@@ -67,7 +66,7 @@ model_checkpoints = [
 # - Finally, we are ready to train our language model
 
 # 3.1 Define the number of training epochs
-epochs = 10
+epochs = 30
 
 
 # 3.2 Start the training with the fit function

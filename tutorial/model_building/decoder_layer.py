@@ -19,8 +19,7 @@ from keras_nlp.layers import TransformerDecoder
 
 # 1.1 Define the dimension of the decoder feed forward networks and the number of attention heads
 # - We can also define if we want to use dropout in the decoder
-# - NOTE: for machines that train slowly, it may be better to use no dropout to save time
-dropout_rate = 0.1
+dropout_rate = 0.2
 ff_dim = 256
 num_heads = 2  # We only use 2 attention heads for the small LLM
 

@@ -19,13 +19,15 @@ import tensorflow as tf
 # 1.1 Define the learning rate and whether we are using JIT compilation
 # - We use a relatively small learning rate for the language model due to its size
 jit_compile = False
-learning_rate = 0.0001
+learning_rate = 0.001
 
 # 1.2 Create the optimizer
 # - The optimizer we are using is RectifiedAdam
-# --- Language models are notoriously difficult to train, and large initial updates can destroy generalization ability
-# --- RectifiedAdam addresses this by using the second moment to stabilize training
+# --- Language models are notoriously difficult to train, and high variance initial updates can destroy generalization ability
+# --- RectifiedAdam addresses this by adding a rectification term to address variance in the adaptive learning rate in the initial updates
 # - Adam is a common optimizer, but I would recommend RectifiedAdam for language models
+# - RectifiedAdam: https://www.tensorflow.org/addons/api_docs/python/tfa/optimizers/RectifiedAdam
+# - Adam: https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/legacy/Adam
 import tensorflow_addons as tfa
 optimizer = tfa.optimizers.RectifiedAdam(learning_rate=learning_rate)
 # optimizer = tf.keras.optimizers.legacy.Adam(learning_rate=learning_rate_scheduler)
@@ -42,5 +44,7 @@ optimizer = tfa.optimizers.RectifiedAdam(learning_rate=learning_rate)
 #      /_/    \_\___|\__|_| \_/ |_|\__|\__, |
 #                                       __/ |
 #                                      |___/
-# - There isn't much to do here, but do play around with the learning rate when training your model
+# - For this activity, do some research on the different types of optimizers tensorflow has to offer.
+# - Partial list here: https://www.tensorflow.org/api_docs/python/tf/keras/optimizers
+# - Select an optimizer you find interesting, and add it above to use later
 

@@ -6,3 +6,5 @@ generations/store3
 generations/store4
 .idea
 __pycache__
+clustering/embeddings.pkl
+clustering/clusters

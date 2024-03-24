@@ -17,6 +17,13 @@ use_cpu = True
 if use_cpu:
     tf.config.set_visible_devices([], 'GPU')
 
+openai_api_key_path = '/Users/gapaza/Dropbox/Keys/seaklab_openai.txt'
+openai_api_key = ''
+if os.path.exists(openai_api_key_path):
+    with open(openai_api_key_path, 'r') as f:
+        openai_api_key = f.read().strip()
+
+
 # """
 #       _____   _                   _                _
 #      |  __ \ (_)                 | |              (_)
@@ -33,6 +40,7 @@ prompts_dir = os.path.join(generations_dir, 'prompts')
 outputs_dir = os.path.join(generations_dir, 'outputs')
 preprocessing_dir = os.path.join(root_dir, 'preprocessing')
 trained_models_dir = os.path.join(root_dir, 'trained_models')
+clustering_dir = os.path.join(root_dir, 'clustering')
 
 
 # """
@@ -82,11 +90,11 @@ def get_subsystem_requirements(base_dir, file_name):
 req_load_dir = os.path.join(generations_dir, 'store4')
 req_load = [
     'adcs_requirements.txt',
-    'gs_requirements.txt',
-    'comm_requirements.txt',
-    'power_requirements.txt',
-    'thermal_requirements.txt',
-    'obdh_requirements.txt',
+    # 'gs_requirements.txt',
+    # 'comm_requirements.txt',
+    # 'power_requirements.txt',
+    # 'thermal_requirements.txt',
+    # 'obdh_requirements.txt',
 ]
 req_data = []
 for req_p in req_load:

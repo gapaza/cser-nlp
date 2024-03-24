@@ -66,7 +66,7 @@ model_checkpoints = [
 # - Finally, we are ready to train our language model
 
 # 3.1 Define the number of training epochs
-epochs = 30
+epochs = 20
 
 
 # 3.2 Start the training with the fit function

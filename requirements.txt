@@ -1,4 +1,4 @@
-tensorflow==2.14
 keras-nlp==0.6.1
+tensorflow==2.14
 tensorflow-addons
 matplotlib

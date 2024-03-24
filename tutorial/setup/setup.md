@@ -13,8 +13,16 @@ Anaconda can be installed here: https://docs.anaconda.com/free/anaconda/install/
 
 ### Python Libraries:
 
-You can install the python dependencies by running the following command:
+You can install the python dependencies by running the following command
+in your python environment:
 
 ```bash
-pip3 install -r requirements.txt
+pip3 install keras-nlp==0.6.1
+pip3 install tensorflow==2.14
+pip3 install tensorflow-addons
+pip3 install matplotlib
 ```
+
+
+It is important that you install tensorflow 2.14 after keras-nlp 0.6.1, as keras-nlp will install a more recent
+version of tensorflow. This may cause issues during the tutorial if you don't have the correct version of tensorflow (2.14) installed.

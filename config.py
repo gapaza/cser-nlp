@@ -43,6 +43,11 @@ trained_models_dir = os.path.join(root_dir, 'trained_models')
 clustering_dir = os.path.join(root_dir, 'clustering')
 
 
+# --> Tutorial Directories
+datafiles_dir = os.path.join(root_dir, 'datafiles')
+
+
+
 # """
 #   _____        _                 _
 #  |  __ \      | |               | |

@@ -27,7 +27,7 @@ from tutorial.model_building.RequirementDecoder import RequirementDecoder
 model = RequirementDecoder()
 
 # 1.2 Get the path of the model to load
-load_model_name = 'tutorial_model_2'
+load_model_name = 'tutorial_model'
 load_model_path = os.path.join(config.trained_models_dir, load_model_name)
 
 # 1.3 Load the model weights

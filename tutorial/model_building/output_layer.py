@@ -1,3 +1,10 @@
+import sys
+import os
+from pathlib import Path
+curr_path = Path(os.path.dirname(os.path.abspath(__file__)))
+root_path = curr_path.parents[1]  # parents[0] is one directory up, parents[1] is two directories up
+if str(root_path) not in sys.path:
+    sys.path.append(str(root_path))
 import config
 
 #        ____        _               _     _
@@ -58,6 +65,6 @@ activation_layer = layers.Activation(
 # - If you can do this, you can use the id2token dictionary from build_vocabulary.py to get the predicted token!
 # YOUR EXPERIMENTAL CODE HERE
 from tutorial.data_preparation.build_vocabulary import id2token
-from tutorial.data_preparation.tokenize import encode_tf
+from tutorial.data_preparation.build_tokenizer import encode_tf
 from tutorial.model_building.embedding_layer import embedding_layer
 from tutorial.model_building.decoder_layer import decoder_layer

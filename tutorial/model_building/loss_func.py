@@ -1,3 +1,10 @@
+import sys
+import os
+from pathlib import Path
+curr_path = Path(os.path.dirname(os.path.abspath(__file__)))
+root_path = curr_path.parents[1]  # parents[0] is one directory up, parents[1] is two directories up
+if str(root_path) not in sys.path:
+    sys.path.append(str(root_path))
 import config
 
 #       _                     ______                _   _
@@ -49,7 +56,7 @@ perplexity_tracker = keras_nlp.metrics.Perplexity(mask_token_id=0)
 # 4. Calculate the perplexity using the perplexity tracker
 # - You can call the perplexity tracker by passing the output of the output layer and the encoded label as arguments
 from tutorial.data_preparation.build_vocabulary import start_token_label, end_token_label
-from tutorial.data_preparation.tokenize import encode_tf
+from tutorial.data_preparation.build_tokenizer import encode_tf
 from tutorial.model_building.embedding_layer import embedding_layer
 from tutorial.model_building.decoder_layer import decoder_layer
 from tutorial.model_building.output_layer import output_layer, activation_layer

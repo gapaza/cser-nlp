@@ -1,3 +1,10 @@
+import sys
+import os
+from pathlib import Path
+curr_path = Path(os.path.dirname(os.path.abspath(__file__)))
+root_path = curr_path.parents[1]  # parents[0] is one directory up, parents[1] is two directories up
+if str(root_path) not in sys.path:
+    sys.path.append(str(root_path))
 import config
 
 #       ______           _              _     _ _               _
@@ -54,6 +61,6 @@ embedding_layer = TokenAndPositionEmbedding(
 # 4. Print the output, and observe the shape of the output
 # - What are the dimensions of the output? Why are they such?
 # YOUR EXPERIMENTAL CODE HERE
-from tutorial.data_preparation.tokenize import encode_tf
+from tutorial.data_preparation.build_tokenizer import encode_tf
 
 

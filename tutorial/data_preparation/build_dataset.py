@@ -1,3 +1,10 @@
+import sys
+import os
+from pathlib import Path
+curr_path = Path(os.path.dirname(os.path.abspath(__file__)))
+root_path = curr_path.parents[1]  # parents[0] is one directory up, parents[1] is two directories up
+if str(root_path) not in sys.path:
+    sys.path.append(str(root_path))
 import config
 
 #       ____        _ _     _   _____        _                 _
@@ -87,7 +94,7 @@ val_dataset_text = val_dataset_text.batch(batch_size, num_parallel_calls=tf.data
 # - This function allows us to apply a custom transformation to each element of the dataset
 
 # 4.1. Define the custom transformation function
-from tutorial.data_preparation.tokenize import encode_tf
+from tutorial.data_preparation.build_tokenizer import encode_tf
 @tf.function
 def encode_batch(requirements_inputs, requirements_targets):
     requirements_inputs_encoded = encode_tf(requirements_inputs)

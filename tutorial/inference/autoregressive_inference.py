@@ -1,5 +1,11 @@
-import config
+import sys
 import os
+from pathlib import Path
+curr_path = Path(os.path.dirname(os.path.abspath(__file__)))
+root_path = curr_path.parents[1]  # parents[0] is one directory up, parents[1] is two directories up
+if str(root_path) not in sys.path:
+    sys.path.append(str(root_path))
+import config
 
 #                     _                                         _             _____        __
 #          /\        | |                                       (_)           |_   _|      / _|
@@ -21,7 +27,7 @@ from tutorial.model_building.RequirementDecoder import RequirementDecoder
 model = RequirementDecoder()
 
 # 1.2 Get the path of the model to load
-load_model_name = 'tutorial_model'
+load_model_name = 'tutorial_model_2'
 load_model_path = os.path.join(config.trained_models_dir, load_model_name)
 
 # 1.3 Load the model weights

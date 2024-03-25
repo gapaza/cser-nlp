@@ -25,4 +25,4 @@ pip3 install matplotlib
 
 
 It is important that you install tensorflow 2.14 after keras-nlp 0.6.1, as keras-nlp will install a more recent
-version of tensorflow. This may cause issues during the tutorial if you don't have the correct version of tensorflow (2.14) installed.
+version of tensorflow that has not been tested with this code. This may cause issues during the tutorial if you don't have the correct version of tensorflow (2.14) installed.

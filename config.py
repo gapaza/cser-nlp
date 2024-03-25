@@ -16,8 +16,10 @@ if use_cpu:
 #      | |__| || || |  |  __/| (__ | |_| (_) || |   | ||  __/\__ \
 #      |_____/ |_||_|   \___| \___| \__|\___/ |_|   |_| \___||___/
 
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-root_dir = os.path.join(parent_dir, 'cser-nlp')
+
+root_dir = os.path.dirname(os.path.abspath(__file__))
+# parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# root_dir = os.path.join(parent_dir, 'cser-nlp')
 
 # --> Datafiles Directory
 datafiles_dir = os.path.join(root_dir, 'datafiles')

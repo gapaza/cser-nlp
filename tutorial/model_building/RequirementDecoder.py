@@ -1,3 +1,10 @@
+import sys
+import os
+from pathlib import Path
+curr_path = Path(os.path.dirname(os.path.abspath(__file__)))
+root_path = curr_path.parents[1]  # parents[0] is one directory up, parents[1] is two directories up
+if str(root_path) not in sys.path:
+    sys.path.append(str(root_path))
 import config
 
 #   _____       _   _   _               _ _           _ _   _______               _   _
@@ -155,7 +162,7 @@ class RequirementDecoder(tf.keras.Model):
 # - NOTE: we cannot call the train or test step without compiling the model first
 # --- Modify the one provided below to your liking
 from tutorial.data_preparation.build_vocabulary import start_token_label, end_token_label
-from tutorial.data_preparation.tokenize import encode_tf
+from tutorial.data_preparation.build_tokenizer import encode_tf
 input_text = start_token_label + ' ' + 'The ADCS shall'
 label_text = 'The ADCS shall' + ' ' + end_token_label
 # YOUR EXPERIMENTAL CODE HERE
